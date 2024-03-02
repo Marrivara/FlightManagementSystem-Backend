@@ -9,5 +9,5 @@ public interface AirplaneServiceInterface {
 
     AirplaneResponse getAirplaneResponseById(Integer airplaneId);
 
-    Airplane createAirplane(AirplaneRequest airplaneRequest);
+    AirplaneResponse createAirplane(AirplaneRequest airplaneRequest);
 }

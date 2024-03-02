@@ -5,16 +5,15 @@ import com.company.organization.backend.model.Airport;
 import com.company.organization.backend.repositories.entities.AirportRepository;
 import com.company.organization.backend.requests.requestConverters.AirportRequestToAirportConverter;
 import com.company.organization.backend.requests.entityRequests.AirportRequest;
-import com.company.organization.backend.response.entityResponses.AirplaneResponse;
 import com.company.organization.backend.response.entityResponses.AirportResponse;
-import com.company.organization.backend.response.responseConverters.AirplaneToAirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.converters.AirplaneToAirportAirplaneResponse;
 import com.company.organization.backend.response.responseConverters.AirportToAirportResponse;
 import com.company.organization.backend.services.interfaces.AirportServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class AirportService implements AirportServiceInterface {
@@ -63,8 +62,8 @@ public class AirportService implements AirportServiceInterface {
     }
 
     @Override
-    public List<AirplaneResponse> getAirplaneResponsesFromAirport(Airport airport) {
-        AirplaneToAirplaneResponse.convertMultipleAirplanes(airport.getAirplanes());
+    public List<AirportAirplaneResponse> getAirplaneResponsesFromAirport(Airport airport) {
+         return AirplaneToAirportAirplaneResponse.convertMultipleAirplanes(airport.getAirplanes());
     }
 
 }

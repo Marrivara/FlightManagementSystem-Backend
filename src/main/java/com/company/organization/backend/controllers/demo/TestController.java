@@ -2,6 +2,7 @@ package com.company.organization.backend.controllers.demo;
 
 import com.company.organization.backend.model.Airplane;
 import com.company.organization.backend.requests.entityRequests.AirplaneRequest;
+import com.company.organization.backend.response.entityResponses.AirplaneResponse;
 import com.company.organization.backend.services.entities.AirplaneService;
 import com.company.organization.backend.services.entities.AirportService;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +26,12 @@ public class TestController {
     }
 
     @GetMapping("/getAirplaneById/{id}")
-    public ResponseEntity<Airplane> getAirplaneById(@PathVariable Integer id) {
-        return ResponseEntity.ok(airplaneService.getAirplaneById(id));
+    public ResponseEntity<AirplaneResponse> getAirplaneById(@PathVariable Integer id) {
+        return ResponseEntity.ok(airplaneService.getAirplaneResponseById(id));
     }
 
     @PostMapping("/createAirplane")
-    public ResponseEntity<Airplane> createAirplane(@RequestBody AirplaneRequest airplaneRequest) {
+    public ResponseEntity<AirplaneResponse> createAirplane(@RequestBody AirplaneRequest airplaneRequest) {
         return ResponseEntity.ok(airplaneService.createAirplane(airplaneRequest));
     }
 

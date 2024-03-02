@@ -7,7 +7,9 @@ import com.company.organization.backend.repositories.entities.AirplaneRepository
 import com.company.organization.backend.requests.entityRequests.AirplaneRequest;
 import com.company.organization.backend.requests.requestConverters.AirplaneRequestToAirplaneConverter;
 import com.company.organization.backend.response.entityResponses.AirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.converters.AirportToAirplaneAirportResponse;
 import com.company.organization.backend.response.responseConverters.AirplaneToAirplaneResponse;
+import com.company.organization.backend.response.responseConverters.AirportToAirportResponse;
 import com.company.organization.backend.services.interfaces.AirplaneServiceInterface;
 import com.company.organization.backend.services.users.AirlineCompanyService;
 import org.springframework.context.annotation.Lazy;
@@ -34,15 +36,17 @@ public class AirplaneService implements AirplaneServiceInterface {
     @Override
     public AirplaneResponse getAirplaneResponseById(Integer airplaneId) {
         Airplane airplane = getAirplaneById(airplaneId);
-        return AirplaneToAirplaneResponse.convert(airplane);
+        Airport airport = airportService.getAirportById(airplane.getLocation().getId());
+        return AirplaneToAirplaneResponse.convert(airplane, AirportToAirplaneAirportResponse.convert(airport));
     }
 
     @Override
-    public Airplane createAirplane(AirplaneRequest airplaneRequest) {
+    public AirplaneResponse createAirplane(AirplaneRequest airplaneRequest) {
         Airport airport = airportService.getAirportById(airplaneRequest.getLocationId());
         AirlineCompany airlineCompany = airlineCompanyService.getAirlineCompanyById(airplaneRequest.getAirlineCompanyId());
         Airplane airplane = AirplaneRequestToAirplaneConverter.convert(airplaneRequest, airport, airlineCompany);
-        return airplaneRepository.save(airplane);
+        airplaneRepository.save(airplane);
+        return AirplaneToAirplaneResponse.convert(airplane, AirportToAirplaneAirportResponse.convert(airport));
     }
 
 

@@ -1,9 +1,7 @@
 package com.company.organization.backend.model;
 
 import com.company.organization.backend.model.base.BaseModel;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +16,11 @@ import java.util.List;
 @Entity
 @Table(name="routes")
 public class Route extends BaseModel {
-    @ElementCollection
+
+    @ElementCollection(targetClass = String.class)
+    @CollectionTable(name = "waypoints", joinColumns = @JoinColumn(name = "route_id"))
+    @Column(name = "waypoint", nullable = false)
     private List<String> waypoints;
     private Integer estimatedTime;
+
 }

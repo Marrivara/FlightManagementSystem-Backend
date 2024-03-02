@@ -2,10 +2,8 @@ package com.company.organization.backend.services.interfaces;
 
 import com.company.organization.backend.model.Airport;
 import com.company.organization.backend.requests.entityRequests.AirportRequest;
-import com.company.organization.backend.requests.requestConverters.AirportRequestToAirportConverter;
-import com.company.organization.backend.response.entityResponses.AirplaneResponse;
 import com.company.organization.backend.response.entityResponses.AirportResponse;
-import com.company.organization.backend.response.responseConverters.AirportToAirportResponse;
+import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
 
 import java.util.List;
 
@@ -21,5 +19,5 @@ public interface AirportServiceInterface {
 
     public AirportResponse removeAirplaneFromAirport(Integer airportId, Integer airplaneId);
 
-    public List<AirplaneResponse> getAirplaneResponsesFromAirport(Airport airport);
+    public List<AirportAirplaneResponse> getAirplaneResponsesFromAirport(Airport airport);
 }

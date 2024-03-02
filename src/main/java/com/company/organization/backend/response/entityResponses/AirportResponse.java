@@ -2,6 +2,7 @@ package com.company.organization.backend.response.entityResponses;
 
 import com.company.organization.backend.model.Airplane;
 import com.company.organization.backend.model.Flight;
+import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class AirportResponse {
             private String code;
             private String name;
             private List<String> runways;
-            private List<AirplaneResponse> airplanes;
+            private List<AirportAirplaneResponse> airplanes;
             private Date createdAt;
             private Date deletedAt;
 }
