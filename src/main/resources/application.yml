@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/JwtSecurity?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=True
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibarnate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibarnate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+
+token:
+  app:
+    secret: 4Do0UFws3ohp8fmVkS+GvWuW3ccD8fxP42wmE9xSvHH2gaf80wSMz6qGYBjUwydcfh/pzDWZIPL81YBuTKJwfhdppa8R+N1cgemxoTjLdRPy4EqrjMHD3JrTqKVSdezjrd1fWxVC+pTI6LX4EMPGmb0mSIEs2/6LvtqegoywfIboQt2ImtupCH/C4YGjGZjjnfKCD2Pr7fkNJg8nTnjufXuOwR6DWCIkoossC3Qm/O/MncLX822oyRPpIJy0dTwzOUXhc1sTMZ4xzN+uUCEMwvb40qkQUY6vWB0srskTE5NDcKeYk/D2H2chzGKEKS8jP3PhRarepdqMuNYsSho6mDkGsMt5v0upLISlQ2TkPcQ=
+    expiration: 86400000
