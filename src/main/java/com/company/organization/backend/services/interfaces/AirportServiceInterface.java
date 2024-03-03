@@ -3,7 +3,7 @@ package com.company.organization.backend.services.interfaces;
 import com.company.organization.backend.model.Airport;
 import com.company.organization.backend.requests.entityRequests.AirportRequest;
 import com.company.organization.backend.response.entityResponses.AirportResponse;
-import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.Airplane.AirportAirplaneResponse;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.company.organization.backend.response.nestedResponses;
+package com.company.organization.backend.response.nestedResponses.Airplane;
 
 import com.company.organization.backend.model.enums.AirplaneType;
 import com.company.organization.backend.response.entityResponses.AirplaneResponse;
@@ -20,5 +20,7 @@ public class AirportAirplaneResponse {
     private AirplaneType airplaneType;
     //private List<FlightResponse> flights;
     //private AirlineCompanyResponse airlineCompany;
+    private Date createdAt;
+    private Date deletedAt;
 
 }

@@ -1,10 +1,7 @@
-package com.company.organization.backend.response.nestedResponses.converters;
+package com.company.organization.backend.response.nestedResponses.Airplane.converters;
 
 import com.company.organization.backend.model.Airplane;
-import com.company.organization.backend.response.entityResponses.AirplaneResponse;
-import com.company.organization.backend.response.nestedResponses.AirplaneAirportResponse;
-import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
-import com.company.organization.backend.response.responseConverters.AirplaneToAirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.Airplane.AirportAirplaneResponse;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,6 +13,8 @@ public class AirplaneToAirportAirplaneResponse {
                 .id(airplane.getId())
                 .airplaneType(airplane.getAirplaneType())
                 .capacity(airplane.getCapacity())
+                .createdAt(airplane.getCreatedAt())
+                .deletedAt(airplane.getDeletedAt())
                 .build();
     }
 

@@ -1,7 +1,7 @@
-package com.company.organization.backend.response.nestedResponses.converters;
+package com.company.organization.backend.response.nestedResponses.Airport.converters;
 
 import com.company.organization.backend.model.Airport;
-import com.company.organization.backend.response.nestedResponses.AirplaneAirportResponse;
+import com.company.organization.backend.response.nestedResponses.Airport.AirplaneAirportResponse;
 import org.springframework.stereotype.Component;
 
 @Component

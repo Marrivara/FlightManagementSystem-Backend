@@ -1,4 +1,4 @@
-package com.company.organization.backend.response.nestedResponses;
+package com.company.organization.backend.response.nestedResponses.Airport;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

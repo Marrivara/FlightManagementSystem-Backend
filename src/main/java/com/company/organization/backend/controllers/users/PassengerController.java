@@ -23,10 +23,4 @@ public class PassengerController {
         return ResponseEntity.ok(passengerService.getPassengerResponseById(id));
     }
 
-    @GetMapping
-    @RequestMapping("/{id}")
-    public ResponseEntity<Passenger> getPassenger(@PathVariable Integer id){
-        logger.info("PassengerController getPassenger method called");
-        return ResponseEntity.ok(passengerService.getPassengerById(id));
-    }
 }

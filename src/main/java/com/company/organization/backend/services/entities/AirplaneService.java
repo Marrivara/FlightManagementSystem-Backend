@@ -7,9 +7,8 @@ import com.company.organization.backend.repositories.entities.AirplaneRepository
 import com.company.organization.backend.requests.entityRequests.AirplaneRequest;
 import com.company.organization.backend.requests.requestConverters.AirplaneRequestToAirplaneConverter;
 import com.company.organization.backend.response.entityResponses.AirplaneResponse;
-import com.company.organization.backend.response.nestedResponses.converters.AirportToAirplaneAirportResponse;
+import com.company.organization.backend.response.nestedResponses.Airport.converters.AirportToAirplaneAirportResponse;
 import com.company.organization.backend.response.responseConverters.AirplaneToAirplaneResponse;
-import com.company.organization.backend.response.responseConverters.AirportToAirportResponse;
 import com.company.organization.backend.services.interfaces.AirplaneServiceInterface;
 import com.company.organization.backend.services.users.AirlineCompanyService;
 import org.springframework.context.annotation.Lazy;

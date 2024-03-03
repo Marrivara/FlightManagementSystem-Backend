@@ -1,8 +1,6 @@
 package com.company.organization.backend.response.entityResponses;
 
-import com.company.organization.backend.model.Airplane;
-import com.company.organization.backend.model.Flight;
-import com.company.organization.backend.response.nestedResponses.AirportAirplaneResponse;
+import com.company.organization.backend.response.nestedResponses.Airplane.AirportAirplaneResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
